@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # LFi Scanner With Nuclei template.
 ###############################################################################
-Author  : Nahid
-Telegram: t.me/fumioryoto
-Web     : https://fumioryoto.github.io/
+#Author  : Nahid
+#Telegram: t.me/fumioryoto
+#Web     : https://fumioryoto.github.io/
 ###############################################################################
 import argparse
 import subprocess
