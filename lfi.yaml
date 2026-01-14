@@ -20,6 +20,7 @@ requests:
       - "{{BaseURL}}/?file={{lfi}}"
       - "{{BaseURL}}/?page={{lfi}}"
       - "{{BaseUrl}}/index.php?page={{lfi}}"
+      - "{{BaseUrl}}/index.php?rid=0&page={{lfi}}"
       - "{{BaseURL}}/?include={{lfi}}"
       - "{{BaseURL}}/?path={{lfi}}"
       - "{{BaseURL}}/?template={{lfi}}"
