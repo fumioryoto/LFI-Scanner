@@ -1,4 +1,5 @@
 ***🔍 LFI Scanner (Nuclei + Python Runner)***
+![Alt text for the screenshot](/Assets/Screenshot.png)
 
 A scalable Local File Inclusion (LFI) detection setup using:
 
