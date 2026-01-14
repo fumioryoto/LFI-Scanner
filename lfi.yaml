@@ -1,0 +1,48 @@
+# LFi Scanner External Payload list support Nuclei template.
+###############################################################################
+#Author  : Nahid
+#Telegram: t.me/fumioryoto
+#Web     : https://fumioryoto.github.io/
+###############################################################################
+id: lfi-external-payload
+
+info:
+  name: Local File Inclusion (LFI) – External Payloads
+  author: nahid
+  severity: high
+  description: Detects LFI using externally supplied payload file (optimized for large payload sets)
+  tags: lfi,file-inclusion
+
+requests:
+  - method: GET
+
+    path:
+      - "{{BaseURL}}/?file={{lfi}}"
+      - "{{BaseURL}}/?page={{lfi}}"
+      - "{{BaseUrl}}/index.php?page={{lfi}}"
+      - "{{BaseURL}}/?include={{lfi}}"
+      - "{{BaseURL}}/?path={{lfi}}"
+      - "{{BaseURL}}/?template={{lfi}}"
+
+    payloads:
+      lfi:
+        - "{{lfi_payloads}}"
+
+    attack: batteringram
+    stop-at-first-match: true
+
+    matchers-condition: or
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - "root:x:0:0:"
+          - "daemon:x:1:1:"
+          - "bin:x:[0-9]+:[0-9]+"
+          - "127.0.0.1\\s+localhost"
+
+      - type: word
+        part: body
+        words:
+          - "/bin/bash"
+          - "/bin/sh"
