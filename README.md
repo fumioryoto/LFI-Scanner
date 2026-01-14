@@ -104,6 +104,8 @@ python3 lfi_runner.py -u https://example.com -l lfi-payload.txt
 
 Full options
 ```bash
+git clone https://github.com/fumioryoto/LFI-Scanner.git
+cd LFI-Scanner/
 python3 lfi_runner.py -u https://example.com -l lfi-payload.txt -t lfi.yaml -o results.txt
 ```
 Arguments
